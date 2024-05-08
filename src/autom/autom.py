@@ -37,6 +37,16 @@ def confirm(message)-> bool:
     return pag.confirm(message) == "OK"
 
 def prompt(message:str, allow_blank:bool = False)->str:
+    """requisita um valor de entrada ao usuário;
+    caso a janela seja fechada ou o usuário clique no botão de cancelar, será retornado o valor: "CANCEL"
+
+    Args:
+        message (str): mensagem que será mostrada no input
+        allow_blank (bool, optional): se será permitido o envio de mensagens em branco . Defaults to False.
+
+    Returns:
+        str: mensagem digitada pelo o usuário ou "CANCEL" caso o envio tenha sido cancelado
+    """
     response = ""
 
     while response =="" :
@@ -48,8 +58,10 @@ def prompt(message:str, allow_blank:bool = False)->str:
     return "CANCEL" if response ==None else response 
 
 def custom_message(message:str,buttons:list[str])-> bool:
-    return pag.confirm(message,buttons) 
+    response = pag.confirm(message,buttons = buttons) 
     
+    return "CANCEL" if response ==None else response 
+
 
 configure()
 
@@ -72,7 +84,6 @@ if __name__ == "__main__":
         moveCursor(363,309,2)
         click()
         alert("DIVIRTA-SE!")
-        im1 = pag.screenshot()
     else:
         print("Ok :(")
     
