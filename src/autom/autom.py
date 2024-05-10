@@ -57,10 +57,19 @@ def prompt(message:str, allow_blank:bool = False)->str:
     
     return "CANCEL" if response ==None else response 
 
-def custom_message(message:str,buttons:list[str])-> bool:
+def custom_message(message:str,buttons:list[str])-> str:
+    """_summary_
+
+    Args:
+        message (str): _description_
+        buttons (list[str]): _description_
+
+    Returns:
+        str: retorna o botão que o usuário clicou. Caso ele feche a janela, retorna ""
+    """
     response = pag.confirm(message,buttons = buttons) 
     
-    return "CANCEL" if response ==None else response 
+    return "" if response ==None else response 
 
 
 configure()

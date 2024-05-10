@@ -20,7 +20,7 @@ def save_func_situacao_df():
     
 
 def get_func_original_df(path:str):
-    func_df =pd.read_excel(path)
+    func_df = pd.read_excel(path, dtype=str)
     return func_df
 
 def create_func_situacao_df(func_df:'pd.DataFrame'):
