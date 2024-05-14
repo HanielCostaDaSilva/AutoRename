@@ -10,7 +10,7 @@ class AutomException(Exception):
 
 def configure():
     pag.FAILSAFE = True
-    pag.PAUSE = 0.6
+    pag.PAUSE = 0.0
 
 def moveCursor(x:int,y:int, duration:float=0.0)->None:
     pag.moveTo(x,y, duration=duration)
@@ -21,7 +21,7 @@ def click(clicks_quanty:int=1)->None:
 def write(text: str)->None:
     pag.write(text)
     
-def pressEnter(quanty_press=1)->None:
+def press_enter(quanty_press=1)->None:
     for i in range(quanty_press):
         pag.hotkey("enter")
     
@@ -88,9 +88,9 @@ if __name__ == "__main__":
         
         write(site)
         press("down")
-        pressEnter()
+        press_enter()
         
-        moveCursor(363,309,2)
+        moveCursor(300,309,2)
         click()
         alert("DIVIRTA-SE!")
     else:

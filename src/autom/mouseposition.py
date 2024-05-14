@@ -1,8 +1,9 @@
 import time
 import pyautogui
 
-while(True):
-    print(pyautogui.position())
-    pyautogui.scroll(-20)
+if __name__ =="__main__":
+    while(True):
+        print(pyautogui.position())
+        #pyautogui.scroll(-20)
 
-    time.sleep(5)
+        time.sleep(5)
