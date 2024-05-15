@@ -90,8 +90,13 @@ def confirm_acess(func:Funcionario)-> bool:
     return resposta =="sim"
 
 #== == == Variables
-#== == moves_to_form
-moves=[ (198,384), (435,486)]
+# == == autom
+
+#moves_to_form
+moves=[ (1124,849), (232,288)]
+
+#quanty_enter_to_confirm
+quanty_enters=3
 
 #== == possibles_problem
 problems=["MATRICULA INEXISTENTE"]
@@ -144,8 +149,7 @@ try:
         autom.moveCursor(moves[0][0], moves[0][1])
         autom.click()
         #APAGUE O CONTEUDO ANTERIOR
-        autom.press("del")        
-        autom.click()
+        #autom.press("del")        
         #ESCREVA O INPUT DA MATRICULA
         autom.write(matricula)
         
@@ -175,11 +179,13 @@ try:
                 #Continue com a automação
                 autom.moveCursor(moves[1][0], moves[1][1]) #mova o cursor para o input de nome
                 autom.click()
-                autom.press("del")        
-                autom.click()
+                #autom.press("del")        
+                #autom.click()
 
                 autom.write(nome)
-                autom.press_enter(2)
+                autom.press_enter(quanty_enters) #preciona a quantidade de enters necessárias para confirmar
+                
+                
                 problem = get_problem(f"{func}\n\n Você alterou o nome do funcionário")
         
                 if problem != "":

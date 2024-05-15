@@ -18,7 +18,6 @@ situacao_lista = ["PENDENTE","INALTERADO","ALTERADO"]
 def save_func_situacao_df():
     try:
         func_situacao_df.to_excel(func_situacao_path,index=False)
-        print(func_situacao_df)
     except Exception as E:
         print(E)
         

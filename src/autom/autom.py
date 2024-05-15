@@ -10,7 +10,7 @@ class AutomException(Exception):
 
 def configure():
     pag.FAILSAFE = True
-    pag.PAUSE = 0.0
+    pag.PAUSE = 0.3
 
 def moveCursor(x:int,y:int, duration:float=0.0)->None:
     pag.moveTo(x,y, duration=duration)
