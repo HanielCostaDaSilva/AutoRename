@@ -154,3 +154,5 @@ cython_debug/
 
 #my---------------
 ./data/*
+data/func.xlsx
+/data
