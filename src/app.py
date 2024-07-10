@@ -108,8 +108,8 @@ func_situacao_df = model.Dataframe(func_situacao_path)
 
 # == == autom
 #moves_to_form
-moves_tela_1=[ (560,850), (1312,850), (230,300)]
-moves_tela_2=[ (2390,800), (3011,800),(2100,360)]
+moves_tela_1=[ (560,850), (1312,850), (199,328)]
+moves_tela_2=[ (2390,800), (3011,800),(2092,378)]
 
 # 1º Option Input
 # 2º Enrollment Input
@@ -286,7 +286,7 @@ yellow = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid"
 #LARANJA quando não foi necessário renomear
 orange = PatternFill(start_color="EC9006", end_color="EC9006", fill_type="solid")
 
-#VERDE quando ocorreu um erro ao tentar renomear o funcionário
+#VERMELHO quando ocorreu um erro ao tentar renomear o funcionário
 red = PatternFill(start_color="FF4200", end_color="FF4200", fill_type="solid")
 
 for row in ws.iter_rows(min_row=2, max_row = len(func_situacao_df) + 1, min_col=1, max_col=len(func_situacao_df.columns)):
