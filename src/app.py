@@ -4,7 +4,6 @@ from openpyxl.styles import PatternFill
 from model.Funcionario import Funcionario
 import tableformat as tf
 from autom import autom
-#from dataframes import funcionario as fdf
 
 import model
 
@@ -95,9 +94,11 @@ def confirm_acess(func:Funcionario)-> bool:
 
 #col name
 sit_DF_col ="SITUACAO_DF"
+""" 
 UNO_col ="UNO"
 sit_col ="SITUAÇÃO"
-
+ """
+nome_correto_col=""
 #== Path DataFrame
 actual_directory = os.path.dirname(os.path.realpath(__file__))
 
@@ -118,10 +119,12 @@ moves_tela_2=[ (2390,800), (3011,800),(2092,378)]
 #options
 options=["02"]
 
-moves = moves_tela_1
+moves = moves_tela_2
 
 quanty_press_confirm=3 #quanty_time_press_enter_to_confirm
-quanty_press_return=3 #quanty_time_press_f3_to_return
+
+### Não é possível retornar automaticamente; pois a quantidade de retorno pode variar
+#quanty_press_return=3 #quanty_time_press_f3_to_return
 
 # == == Lista
 
@@ -152,8 +155,7 @@ if len(func_situacao_df) ==0:
     
     func_situacao_df.add_column(sit_DF_col,situacao_lista[0])
     func_situacao_df.save()
-    
-    
+
 autom.alert("Programa Inciado. Por favor, conecte-se a sua conta")
 
 #O usuário deverá escolher em qual tela o SISTEMA 
